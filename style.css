@@ -1,0 +1,97 @@
+/* General styles and theming */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 2em;
+    color: #3d3d3d;
+    --mdc-theme-primary: #007f8b;
+    --mdc-theme-on-primary: #f1f3f4;
+}
+
+h1, h2 {
+    color: #007f8b;
+}
+
+em {
+    font-weight: bold;
+}
+
+/* Rotating video and canvas for mirroring */
+video, .output_canvas {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+/* Ensuring content visibility and layout */
+section, header, footer {
+    clear: both;
+}
+
+.removed {
+    display: none;
+}
+
+.invisible {
+    opacity: 0.2;
+}
+
+.note {
+    font-style: italic;
+    font-size: 130%;
+}
+
+/* Positioning and styling for video and detection areas */
+.videoView, .detectOnClick {
+    position: relative;
+    width: 48%; /* Adjust width as necessary, or consider using flexbox for automatic sizing */
+    margin: 2% 1%;
+    cursor: pointer;
+}
+
+.videoView p, .detectOnClick p {
+    background-color: #007f8b;
+    color: #fff;
+    font-size: 12px;
+}
+
+.highlighter, .canvas {
+    position: absolute;
+}
+
+.output_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.detectOnClick img {
+    width: 100%;
+}
+
+/* Custom styles for pose display and results */
+.poseCanvas {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.poseResult {
+    display: flex;
+    flex-wrap: wrap; /* Allows child elements to wrap if they exceed the parent's width */
+    justify-content: space-around; /* Evenly spaces child elements */
+    width: 100%;
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+}
+
+/* Additional styles for enhanced UI experience */
+#currentPoseDisplay {
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+#liveView {
+    height: 480px; /* Set to the height of your video */
+    width: 640px; /* Set to the width of your video */
+    position: relative; /* Keeps positioned children within its bounds */
+}
